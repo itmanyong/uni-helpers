@@ -1,0 +1,90 @@
+{
+  "name": "uni-helpers",
+  "version": "0.0.1-beta.1",
+  "description": "助力与库相关辅助功能的集合",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uni-helpers/repo.git"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src/global.d.ts"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "build:deno": "udeno",
+    "build:esm": "mkdist -d",
+    "dev": "pnpm build:stub",
+    "play": "tsx src/index.ts",
+    "prepublishOnly": "pnpm build",
+    "build:stub": "pnpm build --stub",
+    "build:cjs": "mkdist -d --format=cjs",
+    "deps:fresh:major": "npx taze major -w",
+    "deps:fresh:minor": "npx taze minor -w",
+    "deps:fresh:patch": "npx taze patch -w",
+    "release": "bumpp --commit --push --tag && pnpm publish"
+  },
+  "keywords": [
+    "uni",
+    "uniapp",
+    "uni-app",
+    "uni-plugin",
+    "uni-app-plugin",
+    "vite",
+    "vite-plugin",
+    "uni-helpers",
+    "uni-pages",
+    "pages",
+    "uni-manifest",
+    "manifest",
+    "uni-pages",
+    "uni-router",
+    "uni-layout"
+  ],
+  "author": {
+    "name": "itmanyong",
+    "email": "itmanyong@gmail.com",
+    "url": "https://github.com/itmanyong"
+  },
+  "bugs": {
+    "email": "itmanyong@gmail.com",
+    "url": "https://github.com/itmanyong/uni-helpers/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.1",
+    "@types/node": "^22.5.5",
+    "bumpp": "^9.5.2",
+    "mkdist": "^1.5.9",
+    "typescript": "^5.6.2",
+    "udeno": "^0.3.6",
+    "unbuild": "^2.0.0"
+  },
+  "volta": {
+    "node": "20.16.0"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/json5": "^2.2.0",
+    "@vue/compiler-sfc": "^3.5.6",
+    "chokidar": "^4.0.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "json5": "^2.2.3",
+    "lib-helper": "0.0.1-beta.4",
+    "supports-color": "^9.4.0",
+    "tsx": "^4.19.1",
+    "unconfig": "^0.5.5",
+    "vite": "^5.4.5"
+  }
+}
