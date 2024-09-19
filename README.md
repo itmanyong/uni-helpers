@@ -1,57 +1,26 @@
-# lib-template-unbuild
+# uni-helpers
 
-开发公共 npm 库的模板
-
-## 步骤
-
-##### 1. 克隆模板仓库到本地
+## 安装
 
 ```bash
-git clone https://github.com/itmanyong/lib-template-unbuild.git
+# pnpm
+pnpm add uni-helpers
+# yarn
+yarn add uni-helpers
+# npm
+npm install uni-helpers --save
+# cnpm
+cnpm install uni-helpers --save
 ```
 
-##### 2. 安装依赖
+## 使用
 
-```bash
-pnpm install
-```
+> 见下方 helper 说明文档
 
-##### 3.需要修改的信息
+## 内置 helper
 
-- package.json 信息需要修改的字段
-
-```bash
-name
-version
-description
-author
-keywords
-repository.url
-bugs
-```
-- workflows/release.yml 发布流程需要修改的字段
-```bash
-jobs.release.if中的repository_owner比较的值
-```
-- examples/package.json 示例项目需要修改的字段
-```bash
-devDependencies下当前库的依赖名称
-```
-
-##### 4.开发
-
-```bash
-pnpm dev
-```
-
-##### 5.打包
-
-```bash
-pnpm build
-```
-
-##### 6.发布
-
-```bash
-pnpm publish
-```
+- [✅] [pages-helper](./src/pages-helper/README.md) uniapp 应用页面配置辅助库
+- [⏳] [manifest-helper](./src/manifest-helper/README.md) uniapp 应用 manifest.json 开发辅助库
+- [⏳] [router-helper](./src/router-helper/README.md) uniapp 应用路由开发辅助库
+- [⏳] [layout-helper](./src/layout-helper/README.md) uniapp 应用页面布局开发辅助库
+- []

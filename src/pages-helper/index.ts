@@ -1,7 +1,7 @@
-import { PLUGIN_NAME, PLUGIN_OPTIONS_DEFAULT } from "./config";
+import { PLUGIN_NAME, PLUGIN_OPTIONS_DEFAULT, PAGES_CONFIG_DEFAULT } from "./config";
 import PagesHelper from "./core/PagesHelper";
 import type { Plugin } from "vite";
-import type { PagesHelperOptions, PagesHelperContext, UniPagesConfig } from "./types";
+import type { PagesHelperOptions, PagesHelperContext, UniPagesConfig, PagesHelperDefineUniPagesConfig } from "./types";
 export * from "./types";
 
 export function UniPagesHelper(userOptions?: PagesHelperOptions): Plugin {
@@ -36,6 +36,9 @@ export function UniPagesHelper(userOptions?: PagesHelperOptions): Plugin {
   };
 }
 
-export function defineUniPages<T = UniPagesConfig>(config: T): T {
+export function defineUniPages<T = UniPagesConfig>(config: T | PagesHelperDefineUniPagesConfig<T>): T {
+  if (typeof config === "function") {
+    return (config as PagesHelperDefineUniPagesConfig<T>)(PAGES_CONFIG_DEFAULT);
+  }
   return config;
 }

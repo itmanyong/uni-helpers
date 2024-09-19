@@ -1,6 +1,6 @@
 import type { LoggerType, Logger } from "lib-helper";
 import type { FilterPattern } from "vite";
-
+import type { UniPagesConfig } from "./uni-app";
 export * from "./uni-app";
 
 export interface PagesHelperOptions {
@@ -20,7 +20,6 @@ export interface PagesHelperOptions {
   onPagesAfter: ((ctx: PagesHelperContext) => boolean) | null;
 }
 
-
 export interface PagesHelperContext {
   rootPath: string;
   options: PagesHelperOptions;
@@ -37,3 +36,5 @@ export interface PagesHelperContext {
   onPageFileChange: (filePath: string) => void;
   onPageFileDelete: (filePath: string) => void;
 }
+
+export type PagesHelperDefineUniPagesConfig<T = UniPagesConfig> = (config: UniPagesConfig) => T;

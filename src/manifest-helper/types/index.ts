@@ -1,12 +1,13 @@
 import type { LoggerType, Logger } from "lib-helper";
 export * from "./manifest";
 import type { FilterPattern } from "vite";
+import type { UniManifestHelperConfig } from "./manifest";
 
 export interface ManifestHelperOptions {
   root: string;
   logLevel: LoggerType;
-  exclude: FilterPattern;
-  include: FilterPattern;
+  exclude?: FilterPattern;
+  include?: FilterPattern;
   writeMode: "override" | "merge";
   configDir: string;
   outDir: string;
@@ -23,3 +24,5 @@ export interface ManifestHelperContext {
   writeManifestJson: () => void;
   initWatcher: () => void;
 }
+
+export type ManifestHelperDefineUniManifestConfig<T = UniManifestHelperConfig> = (config: UniManifestHelperConfig) => T;

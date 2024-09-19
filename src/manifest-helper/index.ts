@@ -1,7 +1,7 @@
-import { PLUGIN_NAME, PLUGIN_OPTIONS_DEFAULT } from "./config";
+import { PLUGIN_NAME, PLUGIN_OPTIONS_DEFAULT,MANIFEST_CONFIG_DEFAULT } from "./config";
 import ManifestHelper from "./core/ManifestHelper";
 import type { Plugin } from "vite";
-import type { ManifestHelperOptions, ManifestHelperContext, UniManifestHelperConfig } from "./types";
+import type { ManifestHelperOptions, ManifestHelperContext, UniManifestHelperConfig,ManifestHelperDefineUniManifestConfig } from "./types";
 export * from "./types";
 
 export function UniManifestHelper(userOptions?: ManifestHelperOptions): Plugin {
@@ -28,6 +28,11 @@ export function UniManifestHelper(userOptions?: ManifestHelperOptions): Plugin {
   };
 }
 
-export function defineUniManifest<T = UniManifestHelperConfig>(config: T): T {
-  return config;
-}
+
+export function defineUniManifest<T = UniManifestHelperConfig>(config: T | ManifestHelperDefineUniManifestConfig<T>): T {
+    if (typeof config === "function") {
+      return (config as ManifestHelperDefineUniManifestConfig<T>)(MANIFEST_CONFIG_DEFAULT);
+    }
+    return config;
+  }
+  

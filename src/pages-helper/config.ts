@@ -1,7 +1,7 @@
 import type { PagesHelperOptions, UniPagesConfig } from "./types";
 
 export const PKG_NAME = "pages-helper";
-export const PLUGIN_NAME = `uni-helper:${PKG_NAME}`;
+export const PLUGIN_NAME = `uni-helpers:${PKG_NAME}`;
 
 export const PLUGIN_OPTIONS_DEFAULT: PagesHelperOptions = {
   logLevel: "info",

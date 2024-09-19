@@ -30,12 +30,13 @@ export interface UniManifestDistribute extends ObjectType {
   sdkConfigs?: ObjectType;
   orientation?: [];
 }
+export interface UniManifestAppPlusSplashscreen extends ObjectType {
+  alwaysShowBeforeRender?: boolean;
+  autoclose?: boolean;
+  waiting?: boolean;
+}
 export interface UniManifestAppPlus extends ObjectType {
-  splashscreen?: {
-    alwaysShowBeforeRender?: boolean;
-    autoclose?: boolean;
-    waiting?: boolean;
-  };
+  splashscreen?: UniManifestAppPlusSplashscreen;
   screenOrientation?: Array<"portrait-primary" | "portrait-secondary" | "landscape-primary" | "landscape-secondary">;
   modules?: UniManifestAppModule;
   distribute?: UniManifestDistribute;
