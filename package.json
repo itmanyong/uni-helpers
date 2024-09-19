@@ -1,7 +1,7 @@
 {
   "name": "uni-helpers",
   "version": "0.0.1-beta.1",
-  "description": "助力与库相关辅助功能的集合",
+  "description": "助力uniapp相关开发的功能库",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
